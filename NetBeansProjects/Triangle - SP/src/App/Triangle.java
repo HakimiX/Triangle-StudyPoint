@@ -24,6 +24,7 @@ public class Triangle {
         System.out.print("Enter third value: ");
         c = scan.nextInt();
 
+        // Check Type
         if (a < b + c && b < a + c && c < a + b) { 
             if (a == b && b == c) {
                 System.out.println("Equilateral");
