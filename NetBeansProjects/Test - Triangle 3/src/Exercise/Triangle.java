@@ -5,25 +5,24 @@ import java.util.Scanner;
 
 public class Triangle {
 
-    static Scanner scan = new Scanner(System.in);
     private static int a, b, c;
-
-    public Triangle(int value1, int value2, int value3) {
-        a = value1;
-        b = value2;
-        c = value3;
-    }
 
     public static void main(String[] args) {
 
-        System.out.print("Enter first value: ");
-        a = scan.nextInt();
+        Scanner scan;
 
-        System.out.print("Enter second value: ");
-        b = scan.nextInt();
-
-        System.out.print("Enter third value: ");
-        c = scan.nextInt();
+        while(true){
+            try {
+                System.out.println("Enter three numbers");
+                scan = new Scanner(System.in);
+                a = Integer.parseInt(scan.nextLine());
+                b = Integer.parseInt(scan.nextLine());
+                c = Integer.parseInt(scan.nextLine());
+                break;
+            } catch (InputMismatchException | NumberFormatException e) {
+                System.out.println("Enter numbers please");
+            }
+        }
 
         if (a < b + c && b < a + c && c < a + b) { // if triangle
             if (a == b && b == c) {
@@ -37,4 +36,5 @@ public class Triangle {
             System.out.println("Cannot be a Triangle");
         }
     }
+
 }
